@@ -14,7 +14,16 @@
             }).done(function (data){
                 $('#city_autocomplete').autocomplete({
                     source: data,
-                    minLength: 2
+                    minLength: 2,
+                    create: function (event,ui){
+                        $(this).data('ui-autocomplete')._renderItem = function (ul, item) {
+                            console.log("item="+JSON.stringify(item));
+                            return $('<li>')
+                                .append("<img src='' alt='img' />")
+                                .append('<a>' + item.label  +  '</a>')
+                                .appendTo(ul);
+                        };
+                    }
                 });
             });
         });

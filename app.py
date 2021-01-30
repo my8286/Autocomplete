@@ -11,7 +11,7 @@ class SearchForm(Form):
 @app.route('/_autocomplete', methods=['GET'])
 def autocomplete():
     cities = ["Olongapo City",
-          "<p>Angeles City</p>",
+          "Angeles City",
           "Manila",
           "Makati",
           "Pasig",
