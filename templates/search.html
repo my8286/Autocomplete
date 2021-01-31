@@ -19,7 +19,7 @@
         }
         .form-control-feedback {
             position: absolute;
-            z-index: 2;
+            z-index: 8;
             display: block;
             width: 2.375rem;
             height: 2.375rem;
@@ -29,13 +29,22 @@
             color: #aaa;
             border-radius: 150px;
         }
+        body {
+            background-image: url("static/bg.jpg");
+            height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+        }
 
     </style>
   </head>
   <body>
     <div class="container h-100">
         <div class="row h-100 justify-content-center align-items-center">
-          <form class="col-12">
+          <form class="col-lg-8 col-xs-12">
                 <div class="input-group">
                     <span class="fa fa-search form-control-feedback"></span>
                     <!-- <input type="text" class="form-control rounded" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2"> -->
@@ -74,6 +83,17 @@
                     });
                 });
             });
+    </script>
+    <script>
+        $("#autocomplete").click(function(){
+            $(".form-control").css("padding-left", "0.5rem");
+            $(".form-control-feedback").css("z-index","1");
+        });
+
+        $("#autocomplete").blur(function(){
+            $(".form-control").css("padding-left", "2.375rem");
+            $(".form-control-feedback").css("z-index","8");
+        });
     </script>
   </body>
 </html>
